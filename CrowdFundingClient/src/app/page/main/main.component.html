@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <img  width="100%" height="400px" class="img-fluid" src="http://project-rec.eu/wp-content/uploads/2014/01/novi-sad-nocu.jpg">
+      <div class="align-top"> 
+        <div class="carousel-caption">
+            <div class="align-top">
+              <h1  class="align-text-top">ReFresh Novi Sad</h1>
+            </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="search()" class="form form-inline">
+        <label for= "searchProjects">Pretraga po:</label>
+        <select name="searchProjects" [(ngModel)]="critteria" class="form-control">
+          <option selected value="name">nazivu</option>
+          <option value="category">kategoriji</option>
+        </select>
+           <input  name="search" type="text" [(ngModel)]="inputSearch" class="form-control" />
+           <input type="submit" value="Traži" class="btn btn-primary" />
+           <input (click)="resetSearch()" class="btn btn-danger" value="Poništi" type="reset"/>
+      </form>
+      <hr>
+      <label *ngIf="isLoggedIn()" for="addProjects">Dodavanje novih projekata <a class="btn btn-primary" href="add-project">Dodaj</a></label>
+    </div>
+  </div>
+  <hr>
+  <div class="pages"> 
+      <button *ngIf="currentPage>0" (click)="changePage(-1)" class="btn"><<<</button>
+    {{currentPage}}
+       <button *ngIf="currentPage <totalPages-1" (click)="changePage(1)" class="btn">>>></button>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 single-project"  *ngFor="let project of projects">
+        <div class="thumbnail">
+            <img src="{{project.imageURL}}"  class="img-thumbnail img-rounded" alt="{{project.name}}" />
+        </div> 
+        
+        <h3>{{project.name}}</h3>
+        <h5>{{project.category.name}}</h5>
+        <hr>
+        <a class="btn btn-primary" href="projects/{{project.id}}">Detalji</a>
+        <a *ngIf="isAdmin()" class="btn btn-danger" (click)="deleteProject(project.id)">Obriši</a>
+    </div>
+  </div>
+</div>
+<hr>
+
+
+

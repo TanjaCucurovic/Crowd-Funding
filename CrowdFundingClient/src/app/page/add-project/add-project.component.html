@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="saveProject()" class="form">
+        <strong>Naziv projekta:</strong>
+        <input [(ngModel)]="projectsToAdd.name" class="form-control"name="add" type="text" required="true"/>
+        
+        <strong>Kategorija:</strong>
+        <select [compareWith]="byId" [(ngModel)]="projectsToAdd.category" name="category" class="form-control">
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+        </select>  
+
+        <strong>Opis projekta: </strong>
+        <input [(ngModel)]="projectsToAdd.description" type="text" class="form-control" name="projectDesc"/>
+
+        <strong>Početak projekta: </strong>
+        <input [(ngModel)]="projectsToAdd.start" type="date" class="form-control" name="projectStart"/>
+        
+        <strong>Završetak projekta: </strong>
+        <input [(ngModel)]="projectsToAdd.deadline"  type="date" class="form-control"  name="projectEnd" />
+        
+        <strong>Potreban iznos: </strong>
+        <input [(ngModel)]="projectsToAdd.donationGoal"  type="number" class="form-control" name="projectGoal" />
+        <strong>Dodavanje slike: </strong>
+        <input [(ngModel)]="projectsToAdd.imageURL"  type="url" class="form-control" name="imgURl"/>
+        
+        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#dodavanjeZavrseno">
+            Sačuvaj
+        </button>
+        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#dodavanjePrekinuto">
+          Odustani
+      </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <img  width="100%" height="400px" class="img-fluid" src="https://biznakenya.com/wp-content/uploads/2018/01/Crowdfunding-concept-2.jpg">
+        <div class="align-top"> 
+          <div class="carousel-caption">
+              <div class="align-top">
+              </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  
+<!-- Modal -->
+<div class="modal fade" id="dodavanjeZavrseno" tabindex="-1" role="dialog" aria-labelledby="dodavanjeZavrsenoLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="dodavanjeZavrsenoLabel">Dodavanje novog projekta</h4>
+      </div>
+      <div class="modal-body">
+        Uspešno završeno
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
+        <a href="main" type="button" class="btn btn-primary">Povratak na projekte</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="dodavanjePrekinuto" tabindex="-1" role="dialog" aria-labelledby="dodavanjePrekinutoLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="dodavanjeZavrsenoLabel">Dodavanje novog projekta</h4>
+      </div>
+      <div class="modal-body">
+        Da li zaista želite da odustanete od dodavanja novog projekta?
+      </div>
+      <div class="modal-footer">
+        <a href="main" type="button" class="btn btn-primary">DA</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">NE</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+ .single-project{
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 385px;
+
+}
+.thumbnail {
+    position: relative;
+    width: 260px;
+    height: 200px;
+    overflow: hidden;
+  }
+  .thumbnail img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
+
+  .text-light {
+      background-color: #3b5e7d;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 5px;
+  }
+
+  .image img {
+      width: 250px;
+      height: 250px;
+  }
+  

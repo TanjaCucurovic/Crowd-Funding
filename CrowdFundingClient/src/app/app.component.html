@@ -1,0 +1,25 @@
+<nav  class="navbar navbar-inverse">
+  <div class="container"> 
+  <div class="navbar-header">
+    <a class="navbar-brand" href="main">Refresh Novi Sad</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="main">Početna</a></li> 
+      <li><a>O nama</a></li>
+      <li><a href="contact">Kontakt</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+      <li *ngIf="!isLoggedIn()"><a href="login">Login</a></li>
+			<li *ngIf="isLoggedIn()"><a (click)="logout()">Logout</a></li>
+	  </ul>
+  </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+ 
+      
+    
+
+
+
