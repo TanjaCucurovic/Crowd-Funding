@@ -47,8 +47,9 @@ Pokrenuti
 
 ### kreiranje baze
 Inicijalna baza projekta se nalazi u fajlu `db-init`, koji se nalazi u folderu CrowdFundingServer/sql. Pre prvog pokretanja aplikacije, potrebno je:
-    1. Kreirati bazu na MySQL serveru sa nazivom `dbcrowdfunding`
-    2. Neophodno je povezati serverski deo sa MySQL serverom preko application.properties fajla koji se nalazi u src/main/resources. U njemu je potrebno uneti adresu servera za baze podataka, kao i uneti validno korisničko ime i šifru!
+
+1. Kreirati bazu na MySQL serveru sa nazivom `dbcrowdfunding`
+2. Neophodno je povezati serverski deo sa MySQL serverom preko application.properties fajla koji se nalazi u src/main/resources. U njemu je potrebno uneti adresu servera za baze podataka, kao i uneti validno korisničko ime i šifru!
     
 Prilikom prvog pokretanja aplikacije, Spring generiše potrebne tabele, kao i veze između njih. Pokretanje aplikacije vrši se putem App.java fajla koji se nalazi u paketu vp.jpa.crowdfunding.
 
